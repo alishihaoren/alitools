@@ -18,6 +18,9 @@
 
 package org.example;
 
+import com.alibaba.fastjson.JSONObject;
+import org.apache.flink.api.common.functions.MapFunction;
+import org.apache.flink.api.java.tuple.Tuple2;
 import org.apache.flink.streaming.api.datastream.DataStream;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 
@@ -28,7 +31,14 @@ import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
 public class FraudDetectionJob {
 	public static void main(String[] args) throws Exception {
 		StreamExecutionEnvironment env = StreamExecutionEnvironment.getExecutionEnvironment();
-
+		DataStream<String> fileLine = env.readTextFile("file:///D://data.txt");
+		fileLine.map(new MapFunction<String, Tuple2<String, Integer>>() {
+			@Override
+			public Tuple2<String, Integer> map(String s) throws Exception {
+				JSONObject jsonObject = JSONObject.parseObject(s);
+				return new Tuple2(jsonObject.getString("name"), jsonObject.getInteger("age"));
+			}
+		}).keyBy(0).sum(1).print(  );
 
 		env.execute("Fraud Detection");
 	}
