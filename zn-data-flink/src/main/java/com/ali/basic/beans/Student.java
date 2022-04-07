@@ -1,9 +1,12 @@
 package com.ali.basic.beans;
 
+import java.time.LocalDateTime;
+
 public class Student {
 
     private Integer id;
     private String name;
+    private LocalDateTime tmp;
 
     private  String class_name;
 
@@ -13,7 +16,7 @@ public class Student {
     public Student() {
     };
 
-    public Student(Integer id, String name, String class_name, Double score, String city) {
+    public Student(Integer id, String name, String class_name, Double score, String city,LocalDateTime tmp) {
         this.id = id;
         this.name = name;
         this.class_name = class_name;
