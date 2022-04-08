@@ -12,7 +12,7 @@ import org.apache.flink.streaming.api.watermark.Watermark;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public class RuleParallSource extends RichParallelSourceFunction<BandStudentRule> {
+public  class RuleParallSource extends RichParallelSourceFunction<BandStudentRule> {
 //    private  boolean  productFLag=true;
     private AtomicBoolean productFLag = new AtomicBoolean(true);
 
