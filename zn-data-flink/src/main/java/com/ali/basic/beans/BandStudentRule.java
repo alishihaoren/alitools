@@ -1,24 +1,22 @@
 package com.ali.basic.beans;
 
-import java.time.LocalDateTime;
-
-public class Student {
+public class BandStudentRule {
 
     private Integer id;
     private String name;
     private Long tmp;
-    private Double score;
+    private Double level;
 
 
-    public Student() {
+    public BandStudentRule() {
     };
 
-    public Student(Integer id, String name,  Double score,Long tmp) {
+    public BandStudentRule(Integer id, String name, Double level, Long tmp) {
         this.id = id;
         this.name = name;
         this.tmp=tmp;
 
-        this.score = score;
+        this.level = level;
 
     }
 
@@ -40,11 +38,11 @@ public class Student {
 
 
     public Double getScore() {
-        return score;
+        return level;
     }
 
     public void setScore(Double score) {
-        this.score = score;
+        this.level = score;
     }
 
 }
