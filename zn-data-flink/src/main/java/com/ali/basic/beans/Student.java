@@ -13,7 +13,15 @@ public class Student {
     public Student() {
     };
 
-    public Student(Integer id, String name,  Double score,Long tmp) {
+    public Long getTmp() {
+        return tmp;
+    }
+
+    public void setTmp(Long tmp) {
+        this.tmp = tmp;
+    }
+
+    public Student(Integer id, String name, Double score, Long tmp) {
         this.id = id;
         this.name = name;
         this.tmp=tmp;

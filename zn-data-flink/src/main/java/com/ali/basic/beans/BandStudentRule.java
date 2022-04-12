@@ -20,6 +20,22 @@ public class BandStudentRule {
 
     }
 
+    public Long getTmp() {
+        return tmp;
+    }
+
+    public void setTmp(Long tmp) {
+        this.tmp = tmp;
+    }
+
+    public Double getLevel() {
+        return level;
+    }
+
+    public void setLevel(Double level) {
+        this.level = level;
+    }
+
     public Integer getId() {
         return id;
     }

@@ -12,26 +12,26 @@ import org.apache.flink.streaming.api.watermark.Watermark;
 import java.util.Random;
 import java.util.concurrent.atomic.AtomicBoolean;
 
-public  class RuleParallSource extends RichParallelSourceFunction<BandStudentRule> {
-//    private  boolean  productFLag=true;
+public class RuleParallSource extends RichParallelSourceFunction<BandStudentRule> {
+    //    private  boolean  productFLag=true;
     private AtomicBoolean productFLag = new AtomicBoolean(true);
 
-    private Random random=new Random();
-    private String[]   stuArr={"AAA","BBB","CCC","DDD","EEE"};
+    private Random random = new Random();
+    private String[] stuArr = {"AAA", "BBB", "CCC", "DDD", "EEE"};
 
 
     @Override
     public void run(SourceContext<BandStudentRule> sourceContext) throws Exception {
-        RuntimeContext runtimeContext= getRuntimeContext();
-       Integer totalPa= runtimeContext.getNumberOfParallelSubtasks();
+        RuntimeContext runtimeContext = getRuntimeContext();
+        Integer totalPa = runtimeContext.getNumberOfParallelSubtasks();
 
-        while(productFLag.get()){
+        while (productFLag.get()) {
+//            System.out.println(runtimeContext.getIndexOfThisSubtask()+"   "+totalPa);
+            BandStudentRule bandStudentRule = new BandStudentRule(random.nextInt(4), stuArr[random.nextInt(4)], 60.0, System.currentTimeMillis());
+            sourceContext.collect(bandStudentRule);
+//sourceContext.emitWatermark(new Watermark(0L));
 
-      BandStudentRule  bandStudentRule=new BandStudentRule(random.nextInt(4),stuArr[random.nextInt(4)],60.0,System.currentTimeMillis());
-      sourceContext.collect(bandStudentRule);
-sourceContext.emitWatermark(new Watermark(0L));
-
-            Thread.sleep(5000);
+            Thread.sleep(2000);
         }
 
 
@@ -44,12 +44,11 @@ sourceContext.emitWatermark(new Watermark(0L));
 
     @Override
     public void cancel() {
-
+        productFLag=new AtomicBoolean( false);
     }
 
     @Override
     public void open(Configuration parameters) throws Exception {
-
 
 
         super.open(parameters);
