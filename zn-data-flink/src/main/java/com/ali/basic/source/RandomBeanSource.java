@@ -17,6 +17,7 @@ public class RandomBeanSource implements SourceFunction<Student> {
     @Override
     public void run(SourceContext<Student> sourceContext) throws Exception {
 
+
         while (productFLag.get()) {
             Double  value=random.nextDouble()*100;
             Student student=new Student(random.nextInt(10),stuArr[random.nextInt(5)],new BigDecimal(value).setScale(4, RoundingMode.HALF_UP).doubleValue(),System.currentTimeMillis());
