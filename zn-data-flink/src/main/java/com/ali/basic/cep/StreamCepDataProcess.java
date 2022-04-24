@@ -27,7 +27,7 @@ public class StreamCepDataProcess {
         StreamExecutionEnvironment senv = StreamExecutionEnvironment.getExecutionEnvironment();
 
         DataStreamSource<Student> dataStream = senv.addSource(new RandomBeanSource());
-//        dataStream.map(line->JSON.toJSONString(line)).print();
+        dataStream.map(line->JSON.toJSONString(line));
       Pattern<Student,?> pattern=  Pattern.<Student>begin("start").where(new SimpleCondition<Student>() {
             @Override
             public boolean filter(Student student) throws Exception {
