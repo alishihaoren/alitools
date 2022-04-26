@@ -37,10 +37,6 @@ public class StreamCepDataProcess {
             }
         }).within(Time.minutes(1));
 
-
-
-
-
         PatternStream<Student> patternStream = CEP.pattern(dataStream, pattern);
 
         SingleOutputStreamOperator<String> result = patternStream.process(
