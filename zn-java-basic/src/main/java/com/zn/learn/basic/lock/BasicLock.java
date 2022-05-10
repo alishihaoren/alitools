@@ -88,7 +88,7 @@ public class BasicLock {
             public void run() {
                 getThreadNums();
             }
-        },"ali2").start();
+        },"ali1").start();
     }
 
 }
