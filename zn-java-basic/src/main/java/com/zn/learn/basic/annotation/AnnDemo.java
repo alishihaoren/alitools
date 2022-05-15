@@ -11,8 +11,11 @@ public class AnnDemo {
     private  String data;
 
     @AliSingleAnnotation(name = "111")
-    public void getDataInfo(String  name){
-        System.out.println(" run getDataInfo ");
+    public void getDataInfo(@AliSingleAnnotation(name = "alishi haoren") String  name){
+        System.out.println(" run getDataInfo "+name);
+    }
+
+    public AnnDemo() {
     }
 
     public AnnDemo(String name, Integer age, String data) {
