@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ali.zn.data.mapper.TagInfoMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.ali.zn.data.pojo.model.TagInfoDO">
+        <id column="id" property="id"/>
+        <result column="tag_name" property="tagName"/>
+        <result column="description" property="description"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, tag_name as tagName,description
+    </sql>
+
+
+    <select id="getTagInfoById" resultType="com.ali.zn.data.pojo.model.TagInfoDO">
+        select
+        <include refid="Base_Column_List"/>
+        from t_tag_base
+        <if test="list != null ">
+            WHERE id IN
+            <foreach collection="list" item="id" open="(" separator="," close=")">
+                #{id}
+            </foreach>
+        </if>
+
+    </select>
+
+    <!--    <select id="selectAppDetailByKey" resultType="com.zhenergy.tsdb.platform.openapi.pojo.dto.AppDTO">-->
+    <!--        SELECT-->
+    <!--        a.id,-->
+    <!--        a.app_key,-->
+    <!--        a.app_key,-->
+    <!--        a.app_secret,-->
+    <!--        a.data_source_type,-->
+    <!--        GROUP_CONCAT( api.external_url ) as authApis-->
+    <!--        FROM-->
+    <!--        t_app a-->
+    <!--        LEFT JOIN t_app_open_api aa ON a.id = aa.app_id-->
+    <!--        LEFT JOIN t_open_api api on aa.open_api_id = api.id-->
+    <!--        WHERE-->
+    <!--        a.is_delete = 0-->
+    <!--        <if test="appKey != null ">-->
+    <!--            AND app_key = #{appKey}-->
+    <!--        </if>-->
+    <!--        GROUP BY-->
+    <!--        a.id-->
+    <!--    </select>-->
+
+
+</mapper>
