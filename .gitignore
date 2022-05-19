@@ -1,2 +1,5 @@
 /target/
 /.idea/
+/zn-data-flink/target/
+/zn-java-basic/target/
+/data-web-process/target/
