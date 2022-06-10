@@ -12,6 +12,7 @@
         <module>zn-data-flink</module>
         <module>zn-java-basic</module>
         <module>data-netty-process</module>
+        <module>data-spark-process</module>
     </modules>
 
     <properties>
