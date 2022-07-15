@@ -1,0 +1,456 @@
+{
+  "code": "00000",
+  "msg": "成功",
+  "data": {
+    "totalPage": 1,
+    "pageSize": 10000,
+    "totalCount": 74,
+    "currentPage": 1,
+    "list": [
+      {
+        "isGood": "true",
+        "tagValue": 136769.171875,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:19:50.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120610.359375,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:19:50.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136782.25,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:19:52.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120137.390625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:19:52.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137195.890625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:19:54.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120254.875,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:19:54.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137111.84375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:19:56.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120260.296875,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:19:56.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136906.015625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:19:58.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120270.8828125,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:19:58.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136911.5625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:00.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119650.15625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:00.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136599.359375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:02.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120118.2265625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:04.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136812.765625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:04.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119859.265625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:06.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136794.140625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:06.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119938.265625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:08.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137220.328125,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:08.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120180.734375,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:10.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136967.296875,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:10.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136954.234375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:12.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120061.765625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:14.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136807.1875,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:14.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119953.5546875,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:16.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137072.40625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:16.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120021.8125,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:18.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137085.515625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:18.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119655.3046875,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:20.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136878.0625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:20.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120480.9140625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:22.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136686.4375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:22.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136692.40625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:24.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120401.5625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:26.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136463.59375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:26.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120149.90625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:28.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136444.984375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:28.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137021.265625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:30.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119873.2734375,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:32.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137011.15625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:32.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119878.671875,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:34.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137024.25,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:34.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120067.75,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:36.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137118.015625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:36.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119843.609375,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:38.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137597.984375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:38.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119917.1953125,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:40.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137592.390625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:40.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119957.4609375,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:42.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137605.546875,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:42.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120054.2734375,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:44.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136872.53125,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:44.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119986.0,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:46.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136741.984375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:48.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120052.296875,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:48.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137495.328125,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:50.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119688.375,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:50.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137514.0625,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:52.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119620.3125,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:52.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137065.484375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:54.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120227.8671875,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:54.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120313.40625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:56.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137087.703125,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:20:58.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120301.3984375,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:20:58.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 136407.609375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:21:00.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119915.2421875,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:21:00.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 119841.640625,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:21:02.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137056.828125,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:21:04.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120287.578125,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:21:04.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137403.125,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:21:06.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120016.703125,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:21:06.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120095.8125,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:21:08.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 137314.609375,
+        "tagName": "8011.JWH.183_FI_1002",
+        "timestamp": "2022-06-12T04:21:10.000+08:00"
+      },
+      {
+        "isGood": "true",
+        "tagValue": 120276.0078125,
+        "tagName": "8011.JWH.183_FI_2002",
+        "timestamp": "2022-06-12T04:21:10.000+08:00"
+      }
+    ]
+  }
+}
