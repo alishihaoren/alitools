@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/ui/login")
 public class LoginController {
 
-    @Value("${datasource.username:''}")
+    @Value("${datasource.username}")
     private String username;
 
 

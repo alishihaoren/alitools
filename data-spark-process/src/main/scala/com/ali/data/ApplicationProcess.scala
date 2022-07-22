@@ -11,7 +11,6 @@ object  DatProcess{
       print("ali ")
 
 
-
   }
 
 }

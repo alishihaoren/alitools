@@ -19,7 +19,7 @@ import java.util.Map;
  * @author summer
  * @version $Id: SimpleHttpServerHandler.java, v 0.1 2022年01月26日 9:44 AM summer Exp $
  */
-@Slf4j
+
 public class SimpleHttpServerHandler extends SimpleChannelInboundHandler<FullHttpRequest> {
 
     @Override
