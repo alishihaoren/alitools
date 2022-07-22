@@ -1,6 +1,7 @@
 package com.ali.zn.data.controller;
 
 import com.ali.zn.data.service.TagService;
+import com.ali.zn.data.utils.SourceConf;
 import com.alibaba.fastjson.JSON;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,9 @@ public class DataProcessController {
     @Autowired
    private TagService tagService;
 
+    @Autowired
+    private SourceConf sourceConf;
+
     @RequestMapping(value = "/ali")
     public String getMsg(HttpServletRequest request) {
         System.out.println( request.getHeader("name"));
@@ -26,4 +30,12 @@ public class DataProcessController {
     }
 
     ;
+    @RequestMapping(value = "/bean")
+    public String getSource(){
+
+        System.out.println(sourceConf.getAge());
+        return "1222";
+    }
+
+
 }

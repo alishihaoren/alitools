@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: tsdb-server
+  cloud:
+    nacos:
+      config:
+        server-addr: 10.162.201.21:8848,10.162.201.22:8848,10.162.201.23:8848
+        file-extension: yml
+        prefix: tsdb-server
+        namespace: dev
+        username: nacos
+        password: nacos
+        group: tsdb
+
+  profiles:
+    active: dev

@@ -9,6 +9,7 @@
       <list>
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/data-web-process/pom.xml" />
+        <option value="$PROJECT_DIR$/demo-spring-cinfig-data/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">

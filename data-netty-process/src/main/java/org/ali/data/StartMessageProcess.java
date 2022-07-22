@@ -11,7 +11,6 @@ import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.http.HttpObjectAggregator;
 import io.netty.handler.codec.http.HttpRequestDecoder;
 import io.netty.handler.codec.http.HttpResponseEncoder;
-import lombok.extern.slf4j.Slf4j;
 import org.ali.data.handler.SimpleHttpServerHandler;
 
 
@@ -22,7 +21,6 @@ import org.ali.data.handler.SimpleHttpServerHandler;
 
 
 
-@Slf4j
 public class StartMessageProcess {
     /**
      * host
