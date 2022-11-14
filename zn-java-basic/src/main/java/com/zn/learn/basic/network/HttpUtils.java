@@ -121,8 +121,8 @@ public class HttpUtils {
         body.put("businessCode", "ali_test");
         body.put("companyCode","company_ali");
         List<TagData> tagDataList=new ArrayList<TagData>();
-        TagData tagData1=new TagData("A1",1.45,"2022-07-29T00:01:02.000+08:00");
-        TagData tagData2=new TagData("A2",1.45,"2022-07-29T01:01:03.000+08:00");
+        TagData tagData1=new TagData("A4",1.45,"2022-07-29T00:01:06.000+08:00");
+        TagData tagData2=new TagData("A4",1.45,"2022-07-29T01:01:07.000+08:00");
         tagDataList.add(tagData1);
         tagDataList.add(tagData2);
         body.put("tagDataList",tagDataList);
