@@ -7,11 +7,6 @@ public class RuleDataCalc {
     public static void main(String[] args) {
         StreamExecutionEnvironment senv = StreamExecutionEnvironment.getExecutionEnvironment();
 
-
-
-
-
-
     }
 
 }
