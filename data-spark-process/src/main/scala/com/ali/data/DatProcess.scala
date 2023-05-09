@@ -12,10 +12,13 @@ object DatProcess {
     val spark = SparkSession.builder().config(conf).getOrCreate();
 
 
-    val df = spark.read.json("file:///F:/data/tag_info_20230314.text")
+    val df = spark.read.json("file:///F:\\data//solar20230404.json").repartition(1)
     df.createOrReplaceTempView(" tag_info_t")
 
-    spark.sql("select  substring(tagName,1,4) as companyCode  , count(  distinct tagName) as tagNums ,count(*) as  recordNums ,max(PIts) as endTime ,min(piTs) as startTime from tag_info_t group by  substring(tagName,1,4)  limit 10").show(100, false)
+
+//    spark.sql("select  substring(tagName,1,4) as companyCode  from tag_info_t ").show(100);
+//
+    spark.sql("select  substring(tagName,1,4) as companyCode  , count(  distinct tagName) as tagNums ,count(*) as  recordNums ,max(PIts) as endTime ,min(piTs) as startTime from tag_info_t group by  substring(tagName,1,4) order by companyCode   ").show(100, false)
 
 
 
