@@ -12,10 +12,10 @@ import java.util.regex.Pattern;
 public class AvictorTests {
 
     @Test
-    public  void  getExp(){
-        AviatorEvaluator.addFunction(new  TagFuncation());
+    public void getExp() {
+        AviatorEvaluator.addFunction(new TagFuncation());
         String string = AviatorEvaluator.execute("1.2+3+4").toString();// 8.2
-       Object data= AviatorEvaluator.execute("getTag('alishihaoren','*')>15?(getTag('alishihaoren','*')*3):1");
+        Object data = AviatorEvaluator.execute("getTag('alishihaoren','*')>15?(getTag('alishihaoren','*')*3):1");
 
         System.out.println(data.toString());
 //        String name="小明";
@@ -36,23 +36,23 @@ public class AvictorTests {
     }
 
     @Test
-    public  void getPattern(){
-        Pattern  pattern=Pattern.compile("\\$\\{(.*?)}");
-        String  expStr="${alishihaoren}+${你好 世界}";
-      Matcher matcher= pattern.matcher(expStr);
-        if (matcher.find() && matcher.groupCount() >= 1){
-            System.out.println(matcher.group(1)+matcher.group(2));
+    public void getPattern() {
+        Pattern pattern = Pattern.compile("\\$\\{(.*?)}");
+        String expStr = "${alishihaoren}+${你好 世界}";
+        Matcher matcher = pattern.matcher(expStr);
+        if (matcher.find() && matcher.groupCount() >= 1) {
+            System.out.println(matcher.group(1) + matcher.group(2));
         }
 
 
     }
 
     @Test
-    public  void  getTagName(){
-        Pattern  pattern=   Pattern.compile("\'.+[^']@");
-        String  expStr="TagVal('alishihaoren@900')+${你好 世界}";
-        Matcher matcher= pattern.matcher(expStr);
-        if (matcher.find() && matcher.groupCount() >= 1){
+    public void getTagName() {
+        Pattern pattern = Pattern.compile("\'.+[^']@");
+        String expStr = "TagVal('alishihaoren@900')+${你好 世界}";
+        Matcher matcher = pattern.matcher(expStr);
+        if (matcher.find() && matcher.groupCount() >= 1) {
             System.out.println(matcher.group(1));
         }
 

@@ -1,0 +1,11 @@
+{"namespace": "com.zhenergy.tdagent.platform.bean",
+ "type": "record",
+ "name": "TsData",
+ "fields": [
+     {"name": "tagName", "type": "string"},
+     {"name": "isGood",  "type": "boolean"},
+     {"name": "time",  "type": "long"},
+     {"name": "tagValue", "type": "float"},
+     {"name": "tbName", "type": "string"}
+ ]
+}
