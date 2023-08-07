@@ -24,6 +24,7 @@ import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.zip.ZipInputStream;
 
 public class WriteAndReadAvroTest {
 
@@ -41,18 +42,18 @@ public class WriteAndReadAvroTest {
 
     @Test
     public void testWriteInfo() throws IOException {
-        TsData tsData1 = new TsData("ali1", true, System.currentTimeMillis(), 1.234f, "stable_ali_test");
-        TsData tsData2 = new TsData("ali2", true, System.currentTimeMillis(), 1.234f, "stable_ali_test");
-        TsData tsData3 = new TsData("ali3", true, System.currentTimeMillis(), 1.234f, "stable_ali_test");
-        TsData tsData4 = new TsData("ali4", true, System.currentTimeMillis(), 1.234f, "stable_ali_test");
+        TsData tsData1 = new TsData( true, System.currentTimeMillis(), 1.234f, "stable_ali_test");
+        TsData tsData2 = new TsData( true, System.currentTimeMillis(), 1.234f, "stable_ali_test");
+        TsData tsData3 = new TsData( true, System.currentTimeMillis(), 1.234f, "stable_ali_test");
+        TsData tsData4 = new TsData( true, System.currentTimeMillis(), 1.234f, "stable_ali_test");
         String path = "D:\\tmp\\tsdata20230724.avro"; // avro文件存放目录
         DatumWriter<TsData> userDatumWriter = new SpecificDatumWriter<TsData>(TsData.class);
         DataFileWriter<TsData> dataFileWriter = new DataFileWriter<TsData>(userDatumWriter);
         dataFileWriter.create(tsData2.getSchema(), new File(path));
         Random random = new Random();
         // 把生成的user对象写入到avro文件
-        for (int i = 0; i < 100000; i++) {
-            TsData tsData = new TsData("ali" + i, true, System.currentTimeMillis(), random.nextFloat() * 100, "stable_ali_test" + i);
+        for (int i = 0; i < 1000; i++) {
+            TsData tsData = new TsData(true, System.currentTimeMillis(), random.nextFloat() * 100, "stable_ali_test" + i);
             dataFileWriter.append(tsData);
         }
 //        dataFileWriter.append(tsData2);
@@ -67,17 +68,19 @@ public class WriteAndReadAvroTest {
     public void testReadInfo() throws IOException {
 
         DatumReader<TsData> reader = new SpecificDatumReader<TsData>(TsData.class);
-        DataFileReader<TsData> dataFileReader = new DataFileReader<TsData>(new File("D:\\tmp\\tsdata20230724.avro"), reader);
+        DataFileReader<TsData> dataFileReader = new DataFileReader<TsData>(new File("D:\\data\\backup\\back1\\20230727\\zn_wind_stable2023072710.avro"), reader);
         TsData user = null;
         while (dataFileReader.hasNext()) {
             user = dataFileReader.next();
             System.out.println(user);
         }
-
+        System.out.println(user);
+        
     }
 
     @Test
     public void downLoadSpeed() {
+
         try {
             Class.forName("com.taosdata.jdbc.rs.RestfulDriver");
 //            Class.forName("com.taosdata.jdbc.TSDBDriver");
@@ -215,10 +218,8 @@ public class WriteAndReadAvroTest {
 
     @Test
     public void  checkDateFormat(){
-        LocalDateTime localDateTime=LocalDateTime.now();
-        System.out.println(localDateTime.getHour());
-        LocalTime  localTime= LocalTime.of(localDateTime.getHour(),0,0);
-        System.out.println( LocalDateTime.of(localDateTime.toLocalDate(),localTime));
+        File file=new File("D:\\data\\backup\\back1\\20230727\\");
+
 
 
     }

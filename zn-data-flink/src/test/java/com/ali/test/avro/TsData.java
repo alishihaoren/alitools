@@ -5,19 +5,18 @@
  */
 package com.ali.test.avro;
 
-import org.apache.avro.generic.GenericArray;
+import org.apache.avro.message.BinaryMessageDecoder;
+import org.apache.avro.message.BinaryMessageEncoder;
+import org.apache.avro.message.SchemaStore;
 import org.apache.avro.specific.SpecificData;
 import org.apache.avro.util.Utf8;
-import org.apache.avro.message.BinaryMessageEncoder;
-import org.apache.avro.message.BinaryMessageDecoder;
-import org.apache.avro.message.SchemaStore;
 
 @org.apache.avro.specific.AvroGenerated
 public class TsData extends org.apache.avro.specific.SpecificRecordBase implements org.apache.avro.specific.SpecificRecord {
-  private static final long serialVersionUID = -8965722530183697288L;
+  private static final long serialVersionUID = -5719174395669683800L;
 
 
-  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TsData\",\"namespace\":\"com.zhenergy.tdagent.platform.bean\",\"fields\":[{\"name\":\"tagName\",\"type\":\"string\"},{\"name\":\"isGood\",\"type\":\"boolean\"},{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"tagValue\",\"type\":\"float\"},{\"name\":\"tbName\",\"type\":\"string\"}]}");
+  public static final org.apache.avro.Schema SCHEMA$ = new org.apache.avro.Schema.Parser().parse("{\"type\":\"record\",\"name\":\"TsData\",\"namespace\":\"com.zhenergy.tdagent.platform.bean\",\"fields\":[{\"name\":\"isGood\",\"type\":\"boolean\"},{\"name\":\"time\",\"type\":\"long\"},{\"name\":\"tagValue\",\"type\":\"float\"},{\"name\":\"tbName\",\"type\":\"string\"}]}");
   public static org.apache.avro.Schema getClassSchema() { return SCHEMA$; }
 
   private static final SpecificData MODEL$ = new SpecificData();
@@ -73,7 +72,6 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
     return DECODER.decode(b);
   }
 
-  private CharSequence tagName;
   private boolean isGood;
   private long time;
   private float tagValue;
@@ -88,14 +86,12 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
 
   /**
    * All-args constructor.
-   * @param tagName The new value for tagName
    * @param isGood The new value for isGood
    * @param time The new value for time
    * @param tagValue The new value for tagValue
    * @param tbName The new value for tbName
    */
-  public TsData(CharSequence tagName, Boolean isGood, Long time, Float tagValue, CharSequence tbName) {
-    this.tagName = tagName;
+  public TsData(Boolean isGood, Long time, Float tagValue, CharSequence tbName) {
     this.isGood = isGood;
     this.time = time;
     this.tagValue = tagValue;
@@ -106,17 +102,16 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
   public SpecificData getSpecificData() { return MODEL$; }
 
   @Override
-  public  org.apache.avro.Schema getSchema() { return SCHEMA$; }
+  public org.apache.avro.Schema getSchema() { return SCHEMA$; }
 
   // Used by DatumWriter.  Applications should not call.
   @Override
   public Object get(int field$) {
     switch (field$) {
-    case 0: return tagName;
-    case 1: return isGood;
-    case 2: return time;
-    case 3: return tagValue;
-    case 4: return tbName;
+    case 0: return isGood;
+    case 1: return time;
+    case 2: return tagValue;
+    case 3: return tbName;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
   }
@@ -126,30 +121,12 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
   @SuppressWarnings(value="unchecked")
   public void put(int field$, Object value$) {
     switch (field$) {
-    case 0: tagName = (CharSequence)value$; break;
-    case 1: isGood = (Boolean)value$; break;
-    case 2: time = (Long)value$; break;
-    case 3: tagValue = (Float)value$; break;
-    case 4: tbName = (CharSequence)value$; break;
+    case 0: isGood = (Boolean)value$; break;
+    case 1: time = (Long)value$; break;
+    case 2: tagValue = (Float)value$; break;
+    case 3: tbName = (CharSequence)value$; break;
     default: throw new IndexOutOfBoundsException("Invalid index: " + field$);
     }
-  }
-
-  /**
-   * Gets the value of the 'tagName' field.
-   * @return The value of the 'tagName' field.
-   */
-  public CharSequence getTagName() {
-    return tagName;
-  }
-
-
-  /**
-   * Sets the value of the 'tagName' field.
-   * @param value the value to set.
-   */
-  public void setTagName(CharSequence value) {
-    this.tagName = value;
   }
 
   /**
@@ -224,8 +201,8 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
    * Creates a new TsData RecordBuilder.
    * @return A new TsData RecordBuilder
    */
-  public static TsData.Builder newBuilder() {
-    return new TsData.Builder();
+  public static Builder newBuilder() {
+    return new Builder();
   }
 
   /**
@@ -233,11 +210,11 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing builder to copy.
    * @return A new TsData RecordBuilder
    */
-  public static TsData.Builder newBuilder(TsData.Builder other) {
+  public static Builder newBuilder(Builder other) {
     if (other == null) {
-      return new TsData.Builder();
+      return new Builder();
     } else {
-      return new TsData.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -246,11 +223,11 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
    * @param other The existing instance to copy.
    * @return A new TsData RecordBuilder
    */
-  public static TsData.Builder newBuilder(TsData other) {
+  public static Builder newBuilder(TsData other) {
     if (other == null) {
-      return new TsData.Builder();
+      return new Builder();
     } else {
-      return new TsData.Builder(other);
+      return new Builder(other);
     }
   }
 
@@ -261,7 +238,6 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
   public static class Builder extends org.apache.avro.specific.SpecificRecordBuilderBase<TsData>
     implements org.apache.avro.data.RecordBuilder<TsData> {
 
-    private CharSequence tagName;
     private boolean isGood;
     private long time;
     private float tagValue;
@@ -276,27 +252,23 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
      * Creates a Builder by copying an existing Builder.
      * @param other The existing Builder to copy.
      */
-    private Builder(TsData.Builder other) {
+    private Builder(Builder other) {
       super(other);
-      if (isValidValue(fields()[0], other.tagName)) {
-        this.tagName = data().deepCopy(fields()[0].schema(), other.tagName);
+      if (isValidValue(fields()[0], other.isGood)) {
+        this.isGood = data().deepCopy(fields()[0].schema(), other.isGood);
         fieldSetFlags()[0] = other.fieldSetFlags()[0];
       }
-      if (isValidValue(fields()[1], other.isGood)) {
-        this.isGood = data().deepCopy(fields()[1].schema(), other.isGood);
+      if (isValidValue(fields()[1], other.time)) {
+        this.time = data().deepCopy(fields()[1].schema(), other.time);
         fieldSetFlags()[1] = other.fieldSetFlags()[1];
       }
-      if (isValidValue(fields()[2], other.time)) {
-        this.time = data().deepCopy(fields()[2].schema(), other.time);
+      if (isValidValue(fields()[2], other.tagValue)) {
+        this.tagValue = data().deepCopy(fields()[2].schema(), other.tagValue);
         fieldSetFlags()[2] = other.fieldSetFlags()[2];
       }
-      if (isValidValue(fields()[3], other.tagValue)) {
-        this.tagValue = data().deepCopy(fields()[3].schema(), other.tagValue);
+      if (isValidValue(fields()[3], other.tbName)) {
+        this.tbName = data().deepCopy(fields()[3].schema(), other.tbName);
         fieldSetFlags()[3] = other.fieldSetFlags()[3];
-      }
-      if (isValidValue(fields()[4], other.tbName)) {
-        this.tbName = data().deepCopy(fields()[4].schema(), other.tbName);
-        fieldSetFlags()[4] = other.fieldSetFlags()[4];
       }
     }
 
@@ -306,66 +278,22 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
      */
     private Builder(TsData other) {
       super(SCHEMA$, MODEL$);
-      if (isValidValue(fields()[0], other.tagName)) {
-        this.tagName = data().deepCopy(fields()[0].schema(), other.tagName);
+      if (isValidValue(fields()[0], other.isGood)) {
+        this.isGood = data().deepCopy(fields()[0].schema(), other.isGood);
         fieldSetFlags()[0] = true;
       }
-      if (isValidValue(fields()[1], other.isGood)) {
-        this.isGood = data().deepCopy(fields()[1].schema(), other.isGood);
+      if (isValidValue(fields()[1], other.time)) {
+        this.time = data().deepCopy(fields()[1].schema(), other.time);
         fieldSetFlags()[1] = true;
       }
-      if (isValidValue(fields()[2], other.time)) {
-        this.time = data().deepCopy(fields()[2].schema(), other.time);
+      if (isValidValue(fields()[2], other.tagValue)) {
+        this.tagValue = data().deepCopy(fields()[2].schema(), other.tagValue);
         fieldSetFlags()[2] = true;
       }
-      if (isValidValue(fields()[3], other.tagValue)) {
-        this.tagValue = data().deepCopy(fields()[3].schema(), other.tagValue);
+      if (isValidValue(fields()[3], other.tbName)) {
+        this.tbName = data().deepCopy(fields()[3].schema(), other.tbName);
         fieldSetFlags()[3] = true;
       }
-      if (isValidValue(fields()[4], other.tbName)) {
-        this.tbName = data().deepCopy(fields()[4].schema(), other.tbName);
-        fieldSetFlags()[4] = true;
-      }
-    }
-
-    /**
-      * Gets the value of the 'tagName' field.
-      * @return The value.
-      */
-    public CharSequence getTagName() {
-      return tagName;
-    }
-
-
-    /**
-      * Sets the value of the 'tagName' field.
-      * @param value The value of 'tagName'.
-      * @return This builder.
-      */
-    public TsData.Builder setTagName(CharSequence value) {
-      validate(fields()[0], value);
-      this.tagName = value;
-      fieldSetFlags()[0] = true;
-      return this;
-    }
-
-    /**
-      * Checks whether the 'tagName' field has been set.
-      * @return True if the 'tagName' field has been set, false otherwise.
-      */
-    public boolean hasTagName() {
-      return fieldSetFlags()[0];
-    }
-
-
-    /**
-      * Clears the value of the 'tagName' field.
-      * @return This builder.
-      */
-    public TsData.Builder clearTagName() {
-      tagName = null;
-      fieldSetFlags()[0] = false;
-      return this;
     }
 
     /**
@@ -382,10 +310,10 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'isGood'.
       * @return This builder.
       */
-    public TsData.Builder setIsGood(boolean value) {
-      validate(fields()[1], value);
+    public Builder setIsGood(boolean value) {
+      validate(fields()[0], value);
       this.isGood = value;
-      fieldSetFlags()[1] = true;
+      fieldSetFlags()[0] = true;
       return this;
     }
 
@@ -394,7 +322,7 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return True if the 'isGood' field has been set, false otherwise.
       */
     public boolean hasIsGood() {
-      return fieldSetFlags()[1];
+      return fieldSetFlags()[0];
     }
 
 
@@ -402,8 +330,8 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'isGood' field.
       * @return This builder.
       */
-    public TsData.Builder clearIsGood() {
-      fieldSetFlags()[1] = false;
+    public Builder clearIsGood() {
+      fieldSetFlags()[0] = false;
       return this;
     }
 
@@ -421,10 +349,10 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'time'.
       * @return This builder.
       */
-    public TsData.Builder setTime(long value) {
-      validate(fields()[2], value);
+    public Builder setTime(long value) {
+      validate(fields()[1], value);
       this.time = value;
-      fieldSetFlags()[2] = true;
+      fieldSetFlags()[1] = true;
       return this;
     }
 
@@ -433,7 +361,7 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return True if the 'time' field has been set, false otherwise.
       */
     public boolean hasTime() {
-      return fieldSetFlags()[2];
+      return fieldSetFlags()[1];
     }
 
 
@@ -441,8 +369,8 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'time' field.
       * @return This builder.
       */
-    public TsData.Builder clearTime() {
-      fieldSetFlags()[2] = false;
+    public Builder clearTime() {
+      fieldSetFlags()[1] = false;
       return this;
     }
 
@@ -460,10 +388,10 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'tagValue'.
       * @return This builder.
       */
-    public TsData.Builder setTagValue(float value) {
-      validate(fields()[3], value);
+    public Builder setTagValue(float value) {
+      validate(fields()[2], value);
       this.tagValue = value;
-      fieldSetFlags()[3] = true;
+      fieldSetFlags()[2] = true;
       return this;
     }
 
@@ -472,7 +400,7 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return True if the 'tagValue' field has been set, false otherwise.
       */
     public boolean hasTagValue() {
-      return fieldSetFlags()[3];
+      return fieldSetFlags()[2];
     }
 
 
@@ -480,8 +408,8 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'tagValue' field.
       * @return This builder.
       */
-    public TsData.Builder clearTagValue() {
-      fieldSetFlags()[3] = false;
+    public Builder clearTagValue() {
+      fieldSetFlags()[2] = false;
       return this;
     }
 
@@ -499,10 +427,10 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * @param value The value of 'tbName'.
       * @return This builder.
       */
-    public TsData.Builder setTbName(CharSequence value) {
-      validate(fields()[4], value);
+    public Builder setTbName(CharSequence value) {
+      validate(fields()[3], value);
       this.tbName = value;
-      fieldSetFlags()[4] = true;
+      fieldSetFlags()[3] = true;
       return this;
     }
 
@@ -511,7 +439,7 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * @return True if the 'tbName' field has been set, false otherwise.
       */
     public boolean hasTbName() {
-      return fieldSetFlags()[4];
+      return fieldSetFlags()[3];
     }
 
 
@@ -519,9 +447,9 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       * Clears the value of the 'tbName' field.
       * @return This builder.
       */
-    public TsData.Builder clearTbName() {
+    public Builder clearTbName() {
       tbName = null;
-      fieldSetFlags()[4] = false;
+      fieldSetFlags()[3] = false;
       return this;
     }
 
@@ -530,11 +458,10 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
     public TsData build() {
       try {
         TsData record = new TsData();
-        record.tagName = fieldSetFlags()[0] ? this.tagName : (CharSequence) defaultValue(fields()[0]);
-        record.isGood = fieldSetFlags()[1] ? this.isGood : (Boolean) defaultValue(fields()[1]);
-        record.time = fieldSetFlags()[2] ? this.time : (Long) defaultValue(fields()[2]);
-        record.tagValue = fieldSetFlags()[3] ? this.tagValue : (Float) defaultValue(fields()[3]);
-        record.tbName = fieldSetFlags()[4] ? this.tbName : (CharSequence) defaultValue(fields()[4]);
+        record.isGood = fieldSetFlags()[0] ? this.isGood : (Boolean) defaultValue(fields()[0]);
+        record.time = fieldSetFlags()[1] ? this.time : (Long) defaultValue(fields()[1]);
+        record.tagValue = fieldSetFlags()[2] ? this.tagValue : (Float) defaultValue(fields()[2]);
+        record.tbName = fieldSetFlags()[3] ? this.tbName : (CharSequence) defaultValue(fields()[3]);
         return record;
       } catch (org.apache.avro.AvroMissingFieldException e) {
         throw e;
@@ -567,8 +494,6 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
   @Override public void customEncode(org.apache.avro.io.Encoder out)
     throws java.io.IOException
   {
-    out.writeString(this.tagName);
-
     out.writeBoolean(this.isGood);
 
     out.writeLong(this.time);
@@ -584,8 +509,6 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
   {
     org.apache.avro.Schema.Field[] fieldOrder = in.readFieldOrderIfDiff();
     if (fieldOrder == null) {
-      this.tagName = in.readString(this.tagName instanceof Utf8 ? (Utf8)this.tagName : null);
-
       this.isGood = in.readBoolean();
 
       this.time = in.readLong();
@@ -595,25 +518,21 @@ public class TsData extends org.apache.avro.specific.SpecificRecordBase implemen
       this.tbName = in.readString(this.tbName instanceof Utf8 ? (Utf8)this.tbName : null);
 
     } else {
-      for (int i = 0; i < 5; i++) {
+      for (int i = 0; i < 4; i++) {
         switch (fieldOrder[i].pos()) {
         case 0:
-          this.tagName = in.readString(this.tagName instanceof Utf8 ? (Utf8)this.tagName : null);
-          break;
-
-        case 1:
           this.isGood = in.readBoolean();
           break;
 
-        case 2:
+        case 1:
           this.time = in.readLong();
           break;
 
-        case 3:
+        case 2:
           this.tagValue = in.readFloat();
           break;
 
-        case 4:
+        case 3:
           this.tbName = in.readString(this.tbName instanceof Utf8 ? (Utf8)this.tbName : null);
           break;
 

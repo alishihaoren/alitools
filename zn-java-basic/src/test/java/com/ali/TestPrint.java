@@ -22,7 +22,14 @@ public class TestPrint {
     }
     @Test
     public void bigDecimalInfo(){
-        System.out.println(  BigDecimal.valueOf(Double.parseDouble("1.234")/1024).setScale(4,BigDecimal.ROUND_HALF_DOWN).toString());
+        String  dataLine="line/";
+        if((dataLine.lastIndexOf('/')==dataLine.length()-1)||dataLine.lastIndexOf('\\')==dataLine.length()-1){
+            System.out.println(" last date ");
+        };
+
+
+
+
     }
 
 
