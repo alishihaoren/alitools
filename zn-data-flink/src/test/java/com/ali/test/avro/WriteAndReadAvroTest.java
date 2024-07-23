@@ -17,9 +17,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.ZoneOffset;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -68,7 +66,7 @@ public class WriteAndReadAvroTest {
     public void testReadInfo() throws IOException {
 
         DatumReader<TsData> reader = new SpecificDatumReader<TsData>(TsData.class);
-        DataFileReader<TsData> dataFileReader = new DataFileReader<TsData>(new File("D:\\data\\backup\\back1\\20230727\\zn_wind_stable2023072710.avro"), reader);
+        DataFileReader<TsData> dataFileReader = new DataFileReader<TsData>(new File("D:\\data\\backup\\112\\20230805\\zn_wind_stable2023080500.avro"), reader);
         TsData user = null;
         while (dataFileReader.hasNext()) {
             user = dataFileReader.next();
@@ -218,9 +216,24 @@ public class WriteAndReadAvroTest {
 
     @Test
     public void  checkDateFormat(){
-        File file=new File("D:\\data\\backup\\back1\\20230727\\");
+//        File file=new File("D:\\data\\backup\\back1\\20230727\\");
 
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                // 在这里编写任务的具体逻辑
+                System.out.println("定时任务执行了！");
+            }
+        };
 
+        Timer timer = new Timer();
+        // 在1秒后开始执行任务，并每隔5秒重复执行
+        timer.schedule(task, 1000, 5000);
+        try {
+            Thread.sleep(100000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
 
     }
 
