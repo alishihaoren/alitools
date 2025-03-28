@@ -19,7 +19,7 @@ public class SchoolTest {
         FileReader fileReader1= null;
         BufferedReader br1=null;
         try {
-            fileReader1 = new FileReader("F:\\学校/5班已填调查问卷.txt");
+            fileReader1 = new FileReader("F:\\学校/5班.txt");
             br1=new BufferedReader(fileReader1);
             String tmp="";
             while ((tmp=br1.readLine())!=null){
@@ -38,13 +38,15 @@ public class SchoolTest {
         FileReader fileReader= null;
         BufferedReader br=null;
         try {
-            fileReader = new FileReader("F:\\学校/5班.txt");
+            fileReader = new FileReader("F:\\学校/家长所有信息.txt");
             br=new BufferedReader(fileReader);
             String tmp="";
             while ((tmp=br.readLine())!=null){
               String name=tmp.split("\t")[0];
-              if(!dataMap.containsKey(name)){
-                  System.out.println(tmp);
+              if(dataMap.containsKey(name)){
+                  System.out.println("是");
+              }else{
+                  System.out.println("否");
               }
             }
 
