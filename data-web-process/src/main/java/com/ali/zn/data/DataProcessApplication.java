@@ -19,7 +19,11 @@ public class DataProcessApplication {
     public static void main(String[] args) {
         SpringApplication.run(DataProcessApplication.class, args);
     }
-
     // 直接部署镜像 直接部署
+
+
+
+
+
 
 }

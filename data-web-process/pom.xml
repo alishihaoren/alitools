@@ -117,10 +117,21 @@
             <version>3.3.2</version>
             <!--            <version>2.0.41</version>-->
         </dependency>
+        <dependency>
+            <groupId>com.squareup.okhttp3</groupId>
+            <artifactId>okhttp</artifactId>
+            <version>4.12.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.12.0</version>
+        </dependency>
     </dependencies>
 
     <build>
-        <finalName>CMS2tsdb-prod</finalName>
+<!--        <finalName>CMS2tsdb-pre</finalName>-->
+        <finalName>http2Duird-data</finalName>
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -151,7 +162,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.ali.zn.data.task.CMS2ZnTSDBApplication</mainClass>
+                    <mainClass>com.ali.zn.data.task.DownLoadDruidData</mainClass>
                 </configuration>
                 <executions>
                     <execution>
