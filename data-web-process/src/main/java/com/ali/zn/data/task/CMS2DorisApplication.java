@@ -2,6 +2,7 @@ package com.ali.zn.data.task;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import lombok.extern.log4j.Log4j2;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -16,6 +17,7 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.Properties;
 
+@Log4j2
 public class CMS2DorisApplication {
     public static void main(String[] args) {
         // 消费   201 数据
@@ -104,6 +106,7 @@ public class CMS2DorisApplication {
                 }
                 consumer.commitAsync();
                 if(needSleep){
+                    log.info(" 未拉取到数据 休眠5秒钟");
                     Thread.sleep(5000);
                 }
             } catch (Exception e) {

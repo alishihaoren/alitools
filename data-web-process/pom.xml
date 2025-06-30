@@ -110,6 +110,12 @@
             <groupId>org.apache.kafka</groupId>
             <artifactId>kafka_2.11</artifactId>
             <version>2.0.0</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>scala-logging_2.11</artifactId>
+                    <groupId>com.typesafe.scala-logging</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>com.taosdata.jdbc</groupId>
@@ -130,8 +136,9 @@
     </dependencies>
 
     <build>
-<!--        <finalName>CMS2tsdb-pre</finalName>-->
-        <finalName>http2Duird-data</finalName>
+<!--        <finalName>CMS2tsdb-prod</finalName>-->
+        <finalName>CMS2Doris-prod</finalName>
+<!--        <finalName>http2Duird-data</finalName>-->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -162,7 +169,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.ali.zn.data.task.DownLoadDruidData</mainClass>
+                    <mainClass>com.ali.zn.data.task.QueryDorisDBTest</mainClass>
                 </configuration>
                 <executions>
                     <execution>

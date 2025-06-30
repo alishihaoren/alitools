@@ -2,6 +2,7 @@ package com.ali.zn.data.task;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import lombok.extern.log4j.Log4j2;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
@@ -13,8 +14,11 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.Properties;
 
+@Log4j2
 public class CMS2ZnTSDBApplication {
+
     public static void main(String[] args) {
+        log.info(" kafka  算法结构并 实现数据推送--");
         // 消费   201 数据
 //        String kafkaUrl = "10.162.200.23:9092,10.162.200.24:9092,10.162.200.25:9092";
         String kafkaUrl = "10.166.15.216:9094,10.166.15.217:9094,10.166.15.218:9094";
@@ -95,11 +99,16 @@ public class CMS2ZnTSDBApplication {
                             Double gearbox_health_index = jo.getDouble("gearbox_health_index");
                             Double generator_bearing_health_index = jo.getDouble("generator_bearing_health_index");
                             Double main_bearing_health_index = jo.getDouble("main_bearing_health_index");
+                            Double mechanical_index1 = jo.getDouble("mechanical_index1");
+                            Double mechanical_index2 = jo.getDouble("mechanical_index2");
+                            Double mechanical_index3 = jo.getDouble("mechanical_index3");
+
+
                             String device_id = jo.getString("device_id");
                             String tagName = "5211.CMS." + device_id;
                             String tbName = "cms_arithmetic_stable_" + tagName.replace(".", "_");
-                            sqlbuilderback.append(tbName).append("(time,rotation_speed,gearbox_rms_1, gearbox_rms_2, generator_bearing_rms_1,generator_bearing_rms_2, generator_bearing_rms_3, generator_bearing_rms_4, main_bearing_rms_1, main_bearing_rms_2, main_bearing_rms_3, main_bearing_rms_4, operational_status, alert_location, gearbox_mechanical_index, generator_shaft_mechanical_index, main_bearing_mechanical_index, gearbox_health_index,  generator_bearing_health_index, main_bearing_health_index) using cms_arithmetic_stable( tag_name,device_id,standard_code) TAGS('" + tagName + "','" + device_id + "','" + tagName + "')" +
-                                    "values('" + time + "'," + rotation_speed + "," + gearbox_rms_1 + ", " + gearbox_rms_2 + ", " + generator_bearing_rms_1 + "," + generator_bearing_rms_2 + ", " + generator_bearing_rms_3 + ", " + generator_bearing_rms_4 + ", " + main_bearing_rms_1 + "," + main_bearing_rms_2 + ", " + main_bearing_rms_3 + ", " + main_bearing_rms_4 + ", '" + operational_status + "', '" + alert_location + "', " + gearbox_mechanical_index + ", " + generator_shaft_mechanical_index + ", " + main_bearing_mechanical_index + "," + gearbox_health_index + "," + generator_bearing_health_index + ", " + main_bearing_health_index + ")");
+                            sqlbuilderback.append(tbName).append("(time,rotation_speed,gearbox_rms_1, gearbox_rms_2, generator_bearing_rms_1,generator_bearing_rms_2, generator_bearing_rms_3, generator_bearing_rms_4, main_bearing_rms_1, main_bearing_rms_2, main_bearing_rms_3, main_bearing_rms_4, operational_status, alert_location, gearbox_mechanical_index, generator_shaft_mechanical_index, main_bearing_mechanical_index, gearbox_health_index,  generator_bearing_health_index, main_bearing_health_index,mechanical_index1,mechanical_index2,mechanical_index3) using cms_arithmetic_stable( tag_name,device_id,standard_code) TAGS('" + tagName + "','" + device_id + "','" + tagName + "')" +
+                                    "values('" + time + "'," + rotation_speed + "," + gearbox_rms_1 + ", " + gearbox_rms_2 + ", " + generator_bearing_rms_1 + "," + generator_bearing_rms_2 + ", " + generator_bearing_rms_3 + ", " + generator_bearing_rms_4 + ", " + main_bearing_rms_1 + "," + main_bearing_rms_2 + ", " + main_bearing_rms_3 + ", " + main_bearing_rms_4 + ", '" + operational_status + "', '" + alert_location + "', " + gearbox_mechanical_index + ", " + generator_shaft_mechanical_index + ", " + main_bearing_mechanical_index + "," + gearbox_health_index + "," + generator_bearing_health_index + ", " + main_bearing_health_index + ", " + mechanical_index1 + ", " + mechanical_index2 + ", " + mechanical_index3 + ")");
 
                             System.out.println(statement.execute(sqlbuilderback.toString()));
                         }

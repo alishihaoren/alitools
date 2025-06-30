@@ -2,9 +2,15 @@ package com.ali.zn.data.task;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+
+
+import lombok.extern.log4j.Log4j2;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,12 +19,16 @@ import java.sql.Statement;
 import java.util.Arrays;
 import java.util.Properties;
 
+@Log4j2
 public class CMS2DorisApplicationPre {
+//private  static Logger log = LoggerFactory.getLogger(CMS2DorisApplicationPre.class);
+
     public static void main(String[] args) {
         // 消费   201 数据
+        log.info( " 开始拉取数据 -----    ");
         String kafkaUrl = "10.162.200.23:9092,10.162.200.24:9092,10.162.200.25:9092";
 //        String kafkaUrl = "10.166.15.216:9094,10.166.15.217:9094,10.166.15.218:9094";
-        String groupId = "cms2doris";
+        String groupId = "cms2dorisPre";
         Properties properties = new Properties();
         properties.put("bootstrap.servers", kafkaUrl);
         properties.put("group.id", groupId);
@@ -49,8 +59,10 @@ public class CMS2DorisApplicationPre {
 
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-             conn = DriverManager.getConnection("jdbc:mysql://10.162.201.135:9030/cms_arithmetic?useUnicode=true&characterEncoding=utf8&useTimezone=true&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true", "root", "Syl@7758521");
-             statement = conn.createStatement();
+//             conn = DriverManager.getConnection("jdbc:mysql://10.162.201.135:9030/cms_arithmetic?useUnicode=true&characterEncoding=utf8&useTimezone=true&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true", "root", "Syl@7758521");
+            conn = DriverManager.getConnection("jdbc:mysql://10.162.200.33:9030/cms_arithmetic?useUnicode=true&characterEncoding=utf8&useTimezone=true&serverTimezone=Asia/Shanghai&useSSL=false&allowPublicKeyRetrieval=true", "root", "znsk@123");
+
+            statement = conn.createStatement();
 
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
@@ -96,7 +108,8 @@ public class CMS2DorisApplicationPre {
                         }
                     }
                     String execSql=String.format(sqlFormat,time,tagName,deviceId,gFDStr, gBAStr,mBAStr);
-                    System.out.println(  statement.execute(execSql));
+                    statement.execute(execSql);
+                    log.info( "1111" );
 
                 }
                 if(needSleep){
