@@ -41,17 +41,17 @@
             <artifactId>spring-boot-starter-web-services</artifactId>
         </dependency>
 
-            <!--nacos配置相关;版本会引入springcloud alibaba当中的版本,也就是2.2.5.RELEASE-->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
-                <version>2.2.3.RELEASE</version>
-            </dependency>
-<!--            &lt;!&ndash;nacos配置相关;版本会引入springcloud alibaba当中的版本,也就是2.2.5.RELEASE&ndash;&gt;-->
-<!--            <dependency>-->
-<!--                <groupId>com.alibaba.cloud</groupId>-->
-<!--                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
-<!--            </dependency>-->
+        <!--nacos配置相关;版本会引入springcloud alibaba当中的版本,也就是2.2.5.RELEASE-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+            <version>2.2.3.RELEASE</version>
+        </dependency>
+        <!--            &lt;!&ndash;nacos配置相关;版本会引入springcloud alibaba当中的版本,也就是2.2.5.RELEASE&ndash;&gt;-->
+        <!--            <dependency>-->
+        <!--                <groupId>com.alibaba.cloud</groupId>-->
+        <!--                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>-->
+        <!--            </dependency>-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
@@ -88,6 +88,16 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
             <version>1.1.23</version>
+        </dependency>
+        <dependency>
+            <groupId>org.duckdb</groupId>
+            <artifactId>duckdb_jdbc</artifactId>
+            <version>1.3.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.iotdb</groupId>
+            <artifactId>iotdb-jdbc</artifactId>
+            <version>2.0.1-beta</version>
         </dependency>
 
         <!--Spring集成MyBatis依赖-->
@@ -133,12 +143,23 @@
             <artifactId>commons-csv</artifactId>
             <version>1.12.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.tsfile</groupId>
+            <artifactId>tsfile</artifactId>
+            <version>2.0.3</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.7.1</version> <!-- 使用最新稳定版本 -->
+        </dependency>
     </dependencies>
 
     <build>
-<!--        <finalName>CMS2tsdb-prod</finalName>-->
-        <finalName>CMS2Doris-prod</finalName>
-<!--        <finalName>http2Duird-data</finalName>-->
+        <!--        <finalName>CMS2tsdb-prod</finalName>-->
+        <finalName>WindPowerForecastdataprocess-prod</finalName>
+<!--        <finalName>CMS2Doris-prod</finalName>-->
+        <!--        <finalName>http2Duird-data</finalName>-->
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -166,10 +187,19 @@
         </resources>
         <plugins>
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <source>1.8</source> <!-- 或更高版本 -->
+                    <target>1.8</target> <!-- 或更高版本 -->
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.ali.zn.data.task.QueryDorisDBTest</mainClass>
+                    <mainClass>com.ali.zn.data.task.CMS2DorisApplication</mainClass>
                 </configuration>
                 <executions>
                     <execution>

@@ -66,7 +66,7 @@ public class CMS2DorisApplication {
 
         while (true) {
             try {
-                ConsumerRecords<String, String> recordList = consumer.poll(1000);
+                ConsumerRecords<String, String> recordList = consumer.poll(10000);
                 Boolean  needSleep=true;
                 for (ConsumerRecord<String, String> onerecord : recordList) {
                     needSleep=false;
@@ -100,9 +100,9 @@ public class CMS2DorisApplication {
 //                        System.out.println(gearboxArr.toString().length() + "   " +"      comp "+compArr.length+ gearboxArr.toString().substring(0, 1000));
                         }
                     }
+                    log.info(" 接收数据 --->>>  "+time+"  device_code::: "+tagName);
                     String execSql=String.format(sqlFormat,time,tagName,deviceId,gFDStr, gBAStr,mBAStr);
                     System.out.println(  statement.execute(execSql));
-
                 }
                 consumer.commitAsync();
                 if(needSleep){
