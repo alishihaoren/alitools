@@ -74,13 +74,13 @@ public class CMS2ZnTSDBApplication {
         Set<String> sentinels = new HashSet<>();
         sentinels.add("10.166.15.216:26379");
         sentinels.add("10.166.15.217:26379");
-        sentinels.add("10.166.15.218:26379");
+        sentinels.add("10.166.15.237:26379");
         // 连接池配置
         JedisPoolConfig poolConfig = new JedisPoolConfig();
         poolConfig.setMaxTotal(20);
         poolConfig.setMaxIdle(5);
 
-        JedisSentinelPool sentinelPool = new JedisSentinelPool(masterName, sentinels, poolConfig,10000,"Zjhc@1234!",14);
+        JedisSentinelPool sentinelPool = new JedisSentinelPool(masterName, sentinels, poolConfig,10000,"VPIoHw1S6yfDm9jjBJ6u",1);
 
 //        Jedis jedis = sentinelPool.getResource();
 
@@ -192,10 +192,12 @@ public class CMS2ZnTSDBApplication {
                 }
                 jedis.close();
             } catch (Exception e) {
+
                 e.printStackTrace();
             }
 
         }
+//
 
 
     }
